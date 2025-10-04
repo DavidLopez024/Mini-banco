@@ -12,6 +12,7 @@ public class Cuenta {
         this.idCuenta = idCuenta;
         this.tipoCuenta = tipoCuenta;
         this.saldo = saldo;
+        this.transacciones = new java.util.ArrayList<>();
     }
 
     public void depositar(double monto){
@@ -51,6 +52,12 @@ public class Cuenta {
 
                 }
             }
+        }
+
+        public void agregarTransaccion(Transaccion t) {
+            if (t == null) return;
+            if (transacciones == null) transacciones = new java.util.ArrayList<>();
+            transacciones.add(t);
         }
 
 
